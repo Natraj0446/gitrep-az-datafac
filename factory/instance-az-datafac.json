@@ -1,0 +1,9 @@
+{
+	"name": "instance-az-datafac",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "916b4da5-14af-441c-940f-f2f7bc41d4ef",
+		"tenantId": "77fc4a32-3d95-41fc-8030-66b1908246b3"
+	}
+}
