@@ -1,0 +1,33 @@
+{
+	"name": "SourceDataset_hq1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageForDatafac",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "InputEmp.txt",
+				"folderPath": "adfuploadfldr",
+				"container": "containerblobadf"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			}
+		]
+	}
+}
