@@ -60,6 +60,20 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "check if file exists",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_populationtoraw_gz",
+						"type": "DatasetReference"
+					},
+					"timeout": "1.00:00:00",
+					"sleep": 600
+				}
 			}
 		],
 		"annotations": []
