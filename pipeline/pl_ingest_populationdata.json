@@ -6,7 +6,14 @@
 			{
 				"name": "copy covid pop data",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "check if file exists",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:05:00",
 					"retry": 0,
@@ -71,8 +78,8 @@
 						"referenceName": "ds_populationtoraw_gz",
 						"type": "DatasetReference"
 					},
-					"timeout": "1.00:00:00",
-					"sleep": 600
+					"timeout": "0.00:00:30",
+					"sleep": 10
 				}
 			}
 		],
