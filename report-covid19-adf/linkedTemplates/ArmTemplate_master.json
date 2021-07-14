@@ -7,18 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "report-covid19-adf"
 		},
-		"AzureBlobStorageForDatafac_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageForDatafac'"
-		},
-		"AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
-		},
-		"SqlServer1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
-		},
 		"ls_ablob_covidreportingsa_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_ablob_covidreportingsa'"
@@ -34,6 +22,10 @@
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/2c33cee3-b6ce-49a1-b4f6-29ceda2175e3/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/reportingcovid19sa"
+		},
+		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com"
 		},
 		"containerUri": {
 			"type": "string",
@@ -62,15 +54,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorageForDatafac_connectionString": {
-						"value": "[parameters('AzureBlobStorageForDatafac_connectionString')]"
-					},
-					"AzureSqlDatabase1_connectionString": {
-						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
-					},
-					"SqlServer1_connectionString": {
-						"value": "[parameters('SqlServer1_connectionString')]"
-					},
 					"ls_ablob_covidreportingsa_connectionString": {
 						"value": "[parameters('ls_ablob_covidreportingsa_connectionString')]"
 					},
@@ -79,6 +62,9 @@
 					},
 					"ls_adls_covidreportingdatalake_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdatalake_properties_typeProperties_url')]"
+					},
+					"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url')]"
 					},
 					"tr_ingest_population_data_properties_typeProperties_scope": {
 						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
