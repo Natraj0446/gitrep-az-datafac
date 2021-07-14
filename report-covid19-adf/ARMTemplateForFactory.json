@@ -30,6 +30,10 @@
 		"ls_adls_covidreportingdatalake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://reportingcovid19datalake.dfs.core.windows.net"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2c33cee3-b6ce-49a1-b4f6-29ceda2175e3/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/reportingcovid19sa"
 		}
 	},
 	"variables": {
@@ -379,25 +383,34 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyTrigger1')]",
+			"name": "[concat(parameters('factoryName'), '/tr_ingest_population_data')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 3,
-						"startTime": "2021-07-10T13:10:00Z",
-						"endTime": "2021-07-10T13:25:00Z",
-						"timeZone": "UTC"
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_ingest_populationdata",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
 					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/population/blobs/population_by_age.tsv.gz",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_ingest_populationdata')]"
+			]
 		}
 	]
 }
