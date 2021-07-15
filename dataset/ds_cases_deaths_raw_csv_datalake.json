@@ -5,12 +5,17 @@
 			"referenceName": "ls_adls_covidreportingdatalake",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "cases_deaths.csv",
+				"fileName": "hospital_admissions.csv",
 				"folderPath": "ecdc",
 				"fileSystem": "raw"
 			},
