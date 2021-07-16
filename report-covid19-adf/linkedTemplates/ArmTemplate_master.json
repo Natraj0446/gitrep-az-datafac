@@ -19,13 +19,21 @@
 			"type": "string",
 			"defaultValue": "https://reportingcovid19datalake.dfs.core.windows.net"
 		},
+		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com"
+		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/2c33cee3-b6ce-49a1-b4f6-29ceda2175e3/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/reportingcovid19sa"
 		},
-		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourcerelativeURL": {
 			"type": "string",
-			"defaultValue": "https://github.com"
+			"defaultValue": "cloudboxacademy/covid19/raw/main/ecdc_data/hospital_admissions.csv"
+		},
+		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFilename": {
+			"type": "string",
+			"defaultValue": "hospital_admission.csv"
 		},
 		"containerUri": {
 			"type": "string",
@@ -68,6 +76,12 @@
 					},
 					"tr_ingest_population_data_properties_typeProperties_scope": {
 						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
+					},
+					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourcerelativeURL": {
+						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourcerelativeURL')]"
+					},
+					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFilename": {
+						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFilename')]"
 					}
 				}
 			},
