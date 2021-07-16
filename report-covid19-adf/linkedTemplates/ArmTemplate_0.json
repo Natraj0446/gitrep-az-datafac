@@ -570,10 +570,11 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 24,
-						"startTime": "2021-07-16T11:54:00Z",
-						"timeZone": "UTC"
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-07-16T00:37:00Z",
+						"timeZone": "UTC",
+						"schedule": {}
 					}
 				}
 			},
