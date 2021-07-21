@@ -20,8 +20,8 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2021-07-21T18:38:00Z",
-				"timeZone": "UTC"
+				"startTime": "2021-07-21T19:23:00",
+				"timeZone": "India Standard Time"
 			}
 		}
 	}
